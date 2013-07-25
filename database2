@@ -1,0 +1,19 @@
+<html>
+<head> </head>
+<body>
+	<?php
+	$con = mysqli_connect ("localhost", "kevin", "ontraport");
+	// Checks connection
+
+	if (mysqli_connect_errno()){
+		echo ("cannot connect:" .mysql_errno());
+	}
+
+	//Creating a database
+	$sql = "CREATE DATABASE my_db";
+	if (mysqli_query($con,$sql)){
+		echo "Database my_db successfully created";
+	}else{
+		echo " Error creating database:" .mysqli_errno($con);
+	}
+?>
